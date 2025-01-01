@@ -1,0 +1,131 @@
+.filter-form {
+    display: flex;
+    flex-direction: row;
+    /* Change layout to horizontal */
+    gap: 10px;
+    /* Add space between form elements */
+    padding: 20px;
+    /* Add padding around the form */
+    border: 1px solid #ddd;
+    /* Optional: add border for visual separation */
+    border-radius: 8px;
+    /* Rounded corners for better aesthetics */
+    width: 100%;
+    /* Full width or set specific width */
+    background-color: #f9f9f9;
+    /* Light background for better readability */
+    justify-content: space-between;
+    /* Space out input fields and button */
+}
+
+.filter-form input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 30%;
+    /* Adjust width if needed */
+}
+
+.filter-form button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.filter-form button:hover {
+    background-color: #0056b3;
+    /* Darker blue on hover */
+}
+
+
+.container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    /* Light background color for table */
+    border-radius: 8px;
+    /* Rounded corners for better aesthetics */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Light shadow for depth effect */
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    /* Collapse borders for cleaner look */
+}
+
+.table th,
+.table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    /* Light border for rows */
+}
+
+.table th {
+    background-color: #007bff;
+    /* Blue background for header */
+    color: white;
+    font-weight: bold;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+    /* Light grey background for odd rows */
+}
+
+.table-striped tbody tr:nth-child(even) {
+    background-color: #ffffff;
+    /* White background for even rows */
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f1f1f1;
+    /* Light hover effect on rows */
+}
+
+.file-upload-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+    background-color: #218838;
+}
+
+.upload-button:disabled {
+    background-color: #c0c0c0;
+    cursor: not-allowed;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    margin: 0 5px;
+    padding: 5px 10px;
+}
+
+.pagination button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
