@@ -1,7 +1,7 @@
 <h2>Transaction List</h2>
 <div class="file-upload-container">
     <input type="file" id="fileInput" (change)="onFileSelected($event)" class="button" />
-    <button (click)="uploadFile()" class="button">Upload</button>
+    <button (click)="uploadFile()" [disabled]="!selectedFile" class="button">Upload</button>
     <button (click)="onLogout()" class="button">Logout</button>
 </div>
 
@@ -18,9 +18,9 @@
                 <th>TRANSACTION_ID</th>
                 <th>ACCOUNT_NUMBER</th>
                 <th>TRX_AMOUNT</th>
-                <th>DESCRIPTION</th>
                 <th>TRX_DATE</th>
                 <th>TRX_TIME</th>
+                <th>DESCRIPTION</th>
                 <th>CUSTOMER_ID</th>
                 <th>NEW_DESCRIPTION</th>
                 <th>ACTION</th>

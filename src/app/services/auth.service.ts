@@ -18,6 +18,7 @@ export class AuthService {
 
   saveToken(token: string): void {
     localStorage.setItem('authToken', token);
+    this.authTokenSubject.next(token);
   }
 
   getToken(): string | null {

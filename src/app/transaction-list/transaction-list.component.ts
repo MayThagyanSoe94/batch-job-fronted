@@ -25,7 +25,6 @@ export class TransactionListComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadTransactions()
-    //this.getTransaction();
   }
 
   loadTransactions(): void {
@@ -53,11 +52,6 @@ export class TransactionListComponent implements OnInit {
     this.loadTransactions();
   }
 
-  private getTransaction() {
-    this.transactionService.getTransactionList().subscribe(data => {
-      this.transactions = data;
-    })
-  }
   onFileSelected(event: any): void {
     this.selectedFile = event.target.files[0];
   }
@@ -74,6 +68,11 @@ export class TransactionListComponent implements OnInit {
       response => {
         console.log('File uploaded successfully');
         this.loadTransactions();
+        this.selectedFile = null;
+        const fileInput = document.getElementById('fileInput') as HTMLInputElement;
+        if (fileInput) {
+          fileInput.value = '';
+        }
       },
       error => {
         console.error('File upload failed', error);

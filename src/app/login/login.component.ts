@@ -16,22 +16,22 @@ export class LoginComponent {
   constructor(private authService: AuthService, private router: Router) { }
 
   onLogin(): void {
-
     this.authService.login(this.username, this.password).subscribe(
-      (token) => {
-        console.log('Token received:', token);
-        this.authService.saveToken(token);
-        this.router.navigate(['/transactions']);
-        this.showLoginForm = false;
+      (response) => {
+        if (response && typeof response === 'string') {
+          this.authService.saveToken(response);
+          this.router.navigate(['/transactions']);
+        } else {
+          this.errorMessage = 'Unexpected error occurred. Please try again.';
+        }
       },
       (error) => {
-        console.error('Login failed:', error);
-        this.errorMessage = 'Invalid username or password';
+        if (error.status === 401) {
+          this.errorMessage = 'Invalid username or password. Please try again.';
+        } else {
+          this.errorMessage = 'An error occurred during login. Please try again.';
+        }
       }
     );
-  }
-
-  onLogin1(): void {
-    this.router.navigate(['/transactions']);
   }
 }
